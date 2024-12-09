@@ -9,30 +9,12 @@ try:
     import os
     import platform
     import sys
-    import requests
     from colorama import Fore
 except ModuleNotFoundError as e:
-    print(f"{e} CAN'T IMPORT . . . . ")
+    print(f"{e} CAN'T IMPORT . . . .")
     exit()
 
-GUI_SETUP = 0
-
 # DEF & CLASS
-
-username = ''
-password = ''
-
-def login_checker(username,password):
-    file_path = os.path.join(os.path.dirname(__file__), 'login.txt')
-    try:
-        with open(file_path) as f:
-            credentials = [x.strip() for x in f.readlines() if x.strip()]
-            for x in credentials:
-             c_username, c_password = x.split('@')
-             if c_username.upper()  == username.upper() and c_password.upper() == password.upper():
-               return True
-    except FileNotFoundError:
-        return 'UNKNOWN ERROR ARE RETURNING BY FILESNOTFOUND'
 
 def clear_text():
     if platform.system().upper() == "WINDOWS":
@@ -40,18 +22,13 @@ def clear_text():
     else:
         os.system('clear')
 
+def status_print(ip,port,thread_id,rps,path_get):
+    print(f"{Fore.YELLOW}FLOODING {Fore.LIGHTYELLOW_EX}HTTP {Fore.WHITE}---> {Fore.BLUE}TARGET{Fore.WHITE}={ip}:{port} {Fore.LIGHTBLUE_EX}PATH{Fore.WHITE}={path_get} {Fore.CYAN}RPS{Fore.WHITE}={rps} {Fore.LIGHTCYAN_EX}ID{Fore.WHITE}={thread_id}{Fore.RESET}")
 def generate_url_path_pyflooder(num):
     msg = str(string.ascii_letters + string.digits + string.punctuation)
     data = "".join(random.sample(msg, int(num)))
     return data
     
-def generate_url_path_choice(num):
-    letter = '''abcdefghijklmnopqrstuvwxyzABCDELFGHIJKLMNOPQRSTUVWXYZ0123456789!"#$%&'()*+,-./:;?@[\]^_`{|}~'''
-    data = ""
-    for _ in range(int(num)):
-        data += random.choice(letter)
-    return data
-
 def generate_url_path_choice(num):
     data = ""
     for _ in range(int(num)):
@@ -125,15 +102,15 @@ def runing_attack(ip,host,port_loader,time_loader,spam_loader,methods_loader,boo
 
 #DATA
 banner = f"""
-{Fore.BLUE}███████▒▒  ██▒▒      ██▒▒  ████████▒▒ ██▒▒        ████▒▒     ███▒▒  ██████▒▒
-{Fore.BLUE}██▒▒   ██▒▒ ██▒▒    ██▒▒   ██▒▒       ██▒▒      ██▒ ██▒▒  ██▒  ██▒▒██▒▒  ██▒▒
-{Fore.BLUE}██▒▒   ██▒▒  ██▒▒  ██▒▒    ██▒▒       ██▒▒     ██▒▒   ██▒▒██▒▒  ██▒▒██▒▒   ██▒▒
-{Fore.BLUE}██▒▒   ██▒▒   ██▒▒██▒▒     ██▒▒       ██▒▒     ██▒▒   ██▒▒██▒▒  ██▒▒██▒▒   ██▒▒
-{Fore.CYAN}███████▒▒       ██▒▒       ██████▒▒   ██▒▒     ██▒▒   ██▒▒██▒▒  ██▒▒██▒▒   ██▒▒
-{Fore.CYAN}██▒▒            ██▒▒       ██▒▒       ██▒▒      ██▒   ██▒▒  ██▒▒██▒▒ ██▒▒ ██▒▒
-{Fore.CYAN}██▒▒            ██▒▒       ██▒▒       ████████▒▒ ████▒▒     ████▒▒   ██████▒▒
-{Fore.CYAN} ▒▒▒              ▒▒▒        ▒▒▒        ▒▒ ▒▒ ▒▒   ▒▒ ▒▒      ▒ ▒▒     ▒▒▒▒▒
-{Fore.CYAN}  ▒                ▒▒         ▒▒          ▒ ▒ ▒      ▒ ▒        ▒▒        ▒▒
+{Fore.BLUE}╔╗       ╔╗
+{Fore.BLUE}║║       ║║
+{Fore.BLUE}║║       ║║
+{Fore.BLUE}║║══════║║
+{Fore.CYAN}║║       ║║
+{Fore.CYAN}║║       ║║    
+{Fore.CYAN}╚╝       ╚╝
+{Fore.CYAN} 
+{Fore.CYAN}  
 {Fore.RED}===============================================================================
 {Fore.LIGHTRED_EX}[[   ==> internal script By: ZA                  ]]                                                   
 {Fore.WHITE}================================================================={Fore.YELLOW}#{Fore.LIGHTYELLOW_EX}TOOL #{Fore.RESET}"""

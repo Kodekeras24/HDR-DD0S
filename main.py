@@ -47,7 +47,6 @@ def generate_url_path_pyflooder(num):
     return data
     
 def generate_url_path_choice(num):
-    letter = '''abcdefghijklmnopqrstuvwxyzABCDELFGHIJKLMNOPQRSTUVWXYZ0123456789!"#$%&'()*+,-./:;?@[\]^_`{|}~'''
     data = ""
     for _ in range(int(num)):
         data += random.choice(letter)
@@ -102,18 +101,21 @@ def runing_attack(ip,host,port_loader,time_loader,spam_loader,methods_loader,boo
 
 #DATA
 banner = f"""
-{Fore.BLUE}╔╗      ╔╗ ╔══════╗ ║█║██ ██          ████
-{Fore.BLUE}║║      ║║ ║║════╗║ ║█║       █        ██
-{Fore.BLUE}║║      ║║ ║║    ║║  ║█║       █      ██
-{Fore.BLUE}║║══════║║ ║║    ║║ ║█║       █       ██
-{Fore.CYAN}║║      ║║ ║║    ║║  ║█║       █     █   █
-{Fore.CYAN}║║      ║║ ║║════╝║ ║█║╚═╝│
-{Fore.CYAN}╚╝      ╚╝ ╚══════╝ ║█ ██ ██     ████
+{Fore.BLUE}÷÷|  ÷|
+{Fore.BLUE}÷÷|__÷|
+{Fore.BLUE}÷÷÷÷ ÷|
+{Fore.BLUE}÷÷|  ÷|
+{Fore.CYAN}
+{Fore.CYAN}
+{Fore.CYAN}
 {Fore.CYAN} 
 {Fore.CYAN}  
-{Fore.RED}===============================================================================
-{Fore.LIGHTRED_EX}[[   ==> internal script By: ZA                  ]]                                                   
-{Fore.WHITE}================================================================={Fore.YELLOW}#{Fore.LIGHTYELLOW_EX}TOOL #{Fore.RESET}"""
+{Fore.RED}╔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╗
+{Fore.RED}                                                                 
+{Fore.RED}
+{Fore.RED}
+{Fore.RED}╩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TOOL #{Fore.RESET}"""
 
 print(banner)
 host = ""

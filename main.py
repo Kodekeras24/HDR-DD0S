@@ -142,7 +142,7 @@ banner = f"""
 {Fore.GREEN}                     WHO HAS A HIGH FIGHTING SPIRIT                                  
 {Fore.YELLOW}                       FOR OUR BELOVED PALESTINE                                    
 {Fore.CYAN}                                 ———oO0Oo——                                           
-{Fore.RED}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━══\n{Fore.RESET}"""
+{Fore.RED}\n{Fore.RESET}"""
 print(banner)
 host = ""
 ip = ""

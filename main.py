@@ -113,15 +113,15 @@ banner = f"""
 {Fore.WHITE}  /  /__\  \  |  |    |  |  \______  \  |  |_____|  |   /   /___\  \ 
 {Fore.WHITE} /  _____\  \ |  \____/  /   ______| |  |   _____   |  /   _______  \
 {Fore.WHITE}/__/      \__\ \_____   /   |________/  |__|     |__| /___/       \__\
-{Fore.WHITE}                     \__\{Fore.RESET}"""
-banner = f"""
+{Fore.WHITE}                     \__\
+{Fore.RED}
 {Fore.RED}╔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╗
 {Fore.RED}║{Fore.WHITE}             THIS SCRIPT IS DEDICATED TO THEM _   {Fore.RED}║
 {Fore.RED}║{Fore.GREEN}               WHO HAS A HIGH FIGHTING SPIRIT     {Fore.RED}║
 {Fore.RED}║{Fore.YELLOW}                 FOR OUR BELOVED PALESTINE       {Fore.RED}║
 {Fore.RED}║{Fore.CYAN}                           ———oO0Oo——              {Fore.RED}║
-{Fore.RED}╩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━══╝{Fore.RESET}")
-TOOL #{Fore.RESET}"""
+{Fore.RED}╩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━══╝
+{Fore.WHITE}TOOL INI MEMBUTUHKAN WAKTU 35 DETIK UTK MEMULAI SERANGAN {Fore.RESET}"""
 print(banner)
 host = ""
 ip = ""

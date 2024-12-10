@@ -116,10 +116,10 @@ banner = f"""
 {Fore.WHITE}                     \__\
 {Fore.RED}
 {Fore.RED}╔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╗
-{Fore.RED}║{Fore.WHITE}             THIS SCRIPT IS DEDICATED TO THEM _   {Fore.RED}║
-{Fore.RED}║{Fore.GREEN}               WHO HAS A HIGH FIGHTING SPIRIT     {Fore.RED}║
-{Fore.RED}║{Fore.YELLOW}                 FOR OUR BELOVED PALESTINE       {Fore.RED}║
-{Fore.RED}║{Fore.CYAN}                           ———oO0Oo——              {Fore.RED}║
+{Fore.RED}║{Fore.WHITE}             THIS SCRIPT IS DEDICATED TO THEM _             ║
+{Fore.RED}║{Fore.GREEN}               WHO HAS A HIGH FIGHTING SPIRIT               ║
+{Fore.RED}║{Fore.YELLOW}                 FOR OUR BELOVED PALESTINE                 ║
+{Fore.RED}║{Fore.CYAN}                           ———oO0Oo——                        ║
 {Fore.RED}╩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━══╝
 {Fore.RESET}"""
 print(banner)

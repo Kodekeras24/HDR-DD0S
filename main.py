@@ -23,7 +23,7 @@ def clear_text():
         os.system('clear')
 
 def status_print(ip,port,thread_id,rps,path_get):
-    print(f"{Fore.YELLOW}FLOODING {Fore.LIGHTYELLOW_EX}HTTP {Fore.WHITE}---> {Fore.BLUE}TARGET{Fore.WHITE}={ip}:{port} {Fore.LIGHTBLUE_EX}PATH{Fore.WHITE}={path_get} {Fore.CYAN}RPS{Fore.WHITE}={rps} {Fore.LIGHTCYAN_EX}ID{Fore.WHITE}={thread_id}{Fore.RESET}")
+    print(f"{Fore.YELLOW}HUDAIRUL-AQSHA {Fore.LIGHTYELLOW_EX}ATTACK {Fore.WHITE} {Fore.BLUE}TARGET{Fore.WHITE}={ip}:{port} {Fore.LIGHTBLUE_EX}PATH{Fore.WHITE}={path_get} {Fore.CYAN}RPS{Fore.WHITE}={rps} {Fore.LIGHTCYAN_EX}ID{Fore.WHITE}={thread_id}{Fore.RESET}")
 def generate_url_path_pyflooder(num):
     msg = str(string.ascii_letters + string.digits + string.punctuation)
     data = "".join(random.sample(msg, int(num)))
@@ -107,19 +107,20 @@ banner = f"""
 {Fore.CYAN}|  _____  |  | |  |  |  |  |/  /__\ \|  |  |__|  |  |  |  |  |
 {Fore.CYAN}|  |    | |  |_/  |  |__/  /  _____  \  |   __  /|  |_/   |  |____
 {Fore.CYAN}|__|    |_|\___|__|_______/__/     \__\_|__|  \__\____/|__|\______|
-{Fore.YELLOW}      ————        —————————     —————————   ———    ———      ————
+{Fore.YELLOW}     ————        —————————      —————————   ———    ———      ————
 {Fore.YELLOW}    /     \     /   —————  \   /  /—————/  |  |   |  |     /     \
 {Fore.YELLOW}   /   /\  \    |  |     |  | |  |______   |  |___|  |    /   /\  \
-{Fore.BLUE}  /   /__\  \   |  |     |  |  \______  \  |   ___   |   /   /__\  \  
-{Fore.BLUE} /   _____   \  |  |_____/  |  _______|  | |  |   |  |  /   _____   \
-{Fore.BLUE}/___/     \___\  \______   /  |_________/  |__|   |__| /___/     \___\
+{Fore.BLUE}    /   /__\  \   |  |     |  |  \______  \  |   ___   |   /   /__\  \  
+{Fore.BLUE}   /   _____   \  |  |_____/  |  _______|  | |  |   |  |  /   _____   \
+{Fore.BLUE}  /___/     \___\  \______   /  |_________/  |__|   |__| /___/     \___\
 {Fore.BLUE}                          \__\
-{Fore.RED}╔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╗
-{Fore.RED}║                                                                 {Fore.RED}║                                                              
-{Fore.RED}║                                                                 {Fore.RED}║
-{Fore.RED}║                                                                 {Fore.RED}║
-{Fore.RED}║                                                                 {Fore.RED}║
-{Fore.RED}╩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━══╝
+{Fore.BLUE}
+{Fore.RED}╔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╗
+{Fore.RED}║{Fore.WHITE}             THIS SCRIPT IS DEDICATED TO THEM _   {Fore.RED}║                                                              
+{Fore.RED}║{Fore.YELLOW}              WHO HAS A HIGH FIGHTING SPIRIT     {Fore.RED}║
+{Fore.RED}║{Fore.GREEN}                  FOR OUR BELOVED PALESTINE       {Fore.RED}║
+{Fore.RED}║{Fore.MAGENTA}                        ———oO0Oo——              {Fore.RED}║
+{Fore.RED}╩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━══╝
 TOOL #{Fore.RESET}"""
 
 print(banner)

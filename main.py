@@ -137,12 +137,13 @@ banner = f"""
 {Fore.WHITE}  /__/      \__\ \_____   /   |________/  |__|     |__| /___/       \__\
 {Fore.WHITE}                     \__\
 {Fore.RED}
-{Fore.RED}╔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╗
+{Fore.RED}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 {Fore.WHITE}                   THIS SCRIPT IS DEDICATED TO THEM _                                
 {Fore.GREEN}                     WHO HAS A HIGH FIGHTING SPIRIT                                  
 {Fore.YELLOW}                       FOR OUR BELOVED PALESTINE                                    
 {Fore.CYAN}                                 ———oO0Oo——                                           
-{Fore.RED}╩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━══╝{Fore.YELLOW}#{Fore.LIGHTYELLOW_EX}TOOL #{Fore.RESET}"""
+{Fore.RED}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━══{Fore.YELLOW}#{Fore.LIGHTYELLOW_EX}TOOL #{Fore.RESET}"""
+print(banner)
 host = ""
 ip = ""
 target_loader = input(f"{Fore.LIGHTYELLOW_EX}IP/URL>")

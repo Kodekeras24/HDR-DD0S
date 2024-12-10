@@ -107,18 +107,18 @@ banner = f"""
 {Fore.CYAN}|  _____  |  | |  |  |  |  |/  /__\ \|  |  |__|  |  |  |  |  |
 {Fore.CYAN}|  |    | |  |_/  |  |__/  /  _____  \  |   __  /|  |_/   |  |____
 {Fore.CYAN}|__|    |_|\___|__|_______/__/     \__\_|__|  \__\____/|__|\______|
-{Fore.RED}       |
-{Fore.RED}       |
-{Fore.RED}       |
-{Fore.WHITE}       |
-{Fore.WHITE}       |
-{Fore.WHITE}       |
-{Fore.WHITE}
+{Fore.RED}     ————        ———————     —————————   ———      ———      ——————
+{Fore.RED}    /    \     /  ____  \   /  ——————/  |  |     |  |     /   _  \
+{Fore.RED}   /  /\  \   |  /    \  | |  |______   |  |     |  |    /   / \  \
+{Fore.WHITE}  /  /__\  \  |  |    |  |  \______  \  |  |_____|  |   /   /___\  \ 
+{Fore.WHITE} /  _____\  \ |  \____/  /   ______| |  |   _____   |  /   _______  \
+{Fore.WHITE}/__/      \__\ \_____   /   |________/  |__|     |__| /___/       \__\
+{Fore.WHITE}                     \__\
 {Fore.RED}╔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╗
-{Fore.RED}║{Fore.WHITE}             THIS SCRIPT IS DEDICATED TO THEM _         {Fore.RED}║
-{Fore.RED}║{Fore.GREEN}               WHO HAS A HIGH FIGHTING SPIRIT            {Fore.RED}║
-{Fore.RED}║{Fore.YELLOW}                 FOR OUR BELOVED PALESTINE             {Fore.RED}║
-{Fore.RED}║{Fore.CYAN}                           ———oO0Oo——                   {Fore.RED}║
+{Fore.RED}║{Fore.WHITE}             THIS SCRIPT IS DEDICATED TO THEM _          {Fore.RED}║
+{Fore.RED}║{Fore.GREEN}               WHO HAS A HIGH FIGHTING SPIRIT          {Fore.RED}║
+{Fore.RED}║{Fore.YELLOW}                 FOR OUR BELOVED PALESTINE          {Fore.RED}║
+{Fore.RED}║{Fore.CYAN}                           ———oO0Oo——                    {Fore.RED}║
 {Fore.RED}╩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━══╝
 TOOL #{Fore.RESET}"""
 print(banner)

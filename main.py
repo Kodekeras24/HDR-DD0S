@@ -107,8 +107,13 @@ banner = f"""
 {Fore.CYAN}|  _____  |  | |  |  |  |  |/  /__\ \|  |  |__|  |  |  |  |  |
 {Fore.CYAN}|  |    | |  |_/  |  |__/  /  _____  \  |   __  /|  |_/   |  |____
 {Fore.CYAN}|__|    |_|\___|__|_______/__/     \__\_|__|  \__\____/|__|\______|
-     
-{Fore.BLUE}
+{Fore.RED}       |
+{Fore.RED}       |
+{Fore.RED}       |
+{Fore.WHITE}       |
+{Fore.WHITE}       |
+{Fore.WHITE}       |
+{Fore.WHITE}
 {Fore.RED}╔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╗
 {Fore.RED}║{Fore.WHITE}             THIS SCRIPT IS DEDICATED TO THEM _   {Fore.RED}║                                                              
 {Fore.RED}║{Fore.YELLOW}              WHO HAS A HIGH FIGHTING SPIRIT     {Fore.RED}║
@@ -147,3 +152,14 @@ clear_text()
 print(banner)
 status_code = True
 print(f"{Fore.GREEN}TRYING SENT . . . . PAKETMU AKAN DIKIRIM OLEH KURIR ZAN...!!💯🔥🔥⚡{Fore.RESET}")
+
+
+
+
+     ————        —————————      —————————   ———    ———      ————
+    /     \     /   —————  \   /  /—————/  |  |   |  |     /     \
+   /   /\  \    |  |     |  | |  |______   |  |___|  |    /   /\  \
+  /   /__\  \   |  |     |  |  \______  \  |   ___   |   /   /__\  \  
+ /   _____   \  |  |_____/  |  _______|  | |  |   |  |  /   _____   \
+/___/     \___\  \______   /  |_________/  |__|   |__| /___/     \___\
+                        \__\

@@ -142,8 +142,7 @@ banner = f"""
 {Fore.GREEN}                     WHO HAS A HIGH FIGHTING SPIRIT                                  
 {Fore.YELLOW}                       FOR OUR BELOVED PALESTINE                                    
 {Fore.CYAN}                                 ———oO0Oo——                                           
-{Fore.RED}╩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━══╝{Fore.RED}#{Fore.LIGHTYELLOW_EX}TOOL INI MEMBUTUHKAN WAKTU 35 DETIK UTK MEMULAI SERANGAN#{Fore.RESET}"""
-print(banner)
+{Fore.RED}╩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━══╝{Fore.YELLOW}#{Fore.LIGHTYELLOW_EX}TOOL #{Fore.RESET}"""
 host = ""
 ip = ""
 target_loader = input(f"{Fore.LIGHTYELLOW_EX}IP/URL>")

@@ -151,15 +151,5 @@ for loader_num in range(create_thread):
 clear_text()
 print(banner)
 status_code = True
-print(f"{Fore.GREEN}TRYING SENT . . . . PAKETMU AKAN DIKIRIM OLEH KURIR ZAN...!!💯🔥🔥⚡{Fore.RESET}")
-
-
-
-
-     ————        —————————      —————————   ———    ———      ————
-    /     \     /   —————  \   /  /—————/  |  |   |  |     /     \
-   /   /\  \    |  |     |  | |  |______   |  |___|  |    /   /\  \
-  /   /__\  \   |  |     |  |  \______  \  |   ___   |   /   /__\  \  
- /   _____   \  |  |_____/  |  _______|  | |  |   |  |  /   _____   \
-/___/     \___\  \______   /  |_________/  |__|   |__| /___/     \___\
-                        \__\
+print(f"{Fore.GREEN}TRYING SENT . . . . {Fore.RESET}"""
+      

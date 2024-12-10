@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # CHECK IMPORT
 try:
     import socket

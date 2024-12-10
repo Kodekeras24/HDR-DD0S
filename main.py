@@ -101,11 +101,11 @@ def runing_attack(ip,host,port_loader,time_loader,spam_loader,methods_loader,boo
 
 #DATA
 banner = f"""
-{Fore.BLUE}━━      ━━/║    ━━/━━━━\     ━━━━━━━
-{Fore.BLUE}║ ║    ║ ║ ║   ║ ║ ║━━  ║     ━━━━━━━━━━━━━━━
-{Fore.BLUE}║ ║____║ ║ ║   ║ ║ ║  ║ ║
-{Fore.BLUE}║ ║━━━ ║ ║ ║__/  ║ ║_/  ║     ━━━━━━━━━━━━━
-{Fore.CYAN}║_║     ║_║\____/ ║_____/
+{Fore.BLUE}━━      ━━/║   ━━/━━━━━\  /━━━\      ━━
+{Fore.BLUE}║ ║    ║ ║ ║   ║ ║ ║━ \ \/  /━\ \    ━━━━━━━━━━━━━━
+{Fore.BLUE}║ ║____║ ║ ║   ║ ║ ║  ║ ║  ║__║ ║
+{Fore.CYAN}║ ║━━━ ║ ║ ║__/  ║ ║_/  /║  __  ║  ━━━━━━━━━━━
+{Fore.CYAN}║_║    ║_║\____/║_║____/  ║_║  ║_║
 {Fore.CYAN}
 {Fore.CYAN}
 {Fore.CYAN} 

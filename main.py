@@ -121,9 +121,8 @@ banner = f"""
 {Fore.RED}║{Fore.YELLOW}                 FOR OUR BELOVED PALESTINE                 ║
 {Fore.RED}║{Fore.CYAN}                           ———oO0Oo——                        ║
 {Fore.RED}╩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━══╝
-{Fore.RESET}"""
+{Fore.WHITE}TOOL INI MEMBUTUHKAN WAKTU 35 DETIK UTK MEMULAI SERANGAN{Fore.RESET}"""
 print(banner)
-(f"{Fore.WHITE}TOOL INI MEMBUTUHKAN WAKTU 35 DETIK UTK MEMULAI SERANGAN {Fore.RESET}")
 host = ""
 ip = ""
 target_loader = input(f"{Fore.LIGHTYELLOW_EX}IP/URL>")

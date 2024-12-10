@@ -101,19 +101,19 @@ def runing_attack(ip,host,port_loader,time_loader,spam_loader,methods_loader,boo
 
 #DATA
 banner = f"""
-{Fore.BLUE}━━      ━━/║   ━━/━━━━━\  /━━━\      ━━
-{Fore.BLUE}║ ║    ║ ║ ║   ║ ║ ║━ \ \/  /━\ \    ━━━━━━━━━━━━━━
-{Fore.BLUE}║ ║____║ ║ ║   ║ ║ ║  ║ ║  ║__║ ║
-{Fore.CYAN}║ ║━━━ ║ ║ ║__/  ║ ║_/  /║  __  ║  ━━━━━━━━━━━
-{Fore.CYAN}║_║    ║_║\____/║_║____/  ║_║  ║_║
-{Fore.CYAN}
+{Fore.BLUE} ———    —— ——   ——  —————      ———    —— ———————\————  ——— ——— 
+{Fore.BLUE}|  |    | |  | |  |   ——  \   /   \  |  |   __   \  |  |  |  |
+{Fore.BLUE}|  |____| |  | |  |  |  |  | /  /\ \ |  |  |  |  |  |  |  |  |
+{Fore.CYAN}|  _____  |  | |  |  |  |  |/  /__\ \|  |  |__|  |  |  |  |  |
+{Fore.CYAN}|  |    | |  |_/  |  |__/  /  _____  \  |   __  /|  |_/   |  |____
+{Fore.CYAN}|__|    |_|\___|__|_______/__/     \__\_|__|  \__\____/|__|\______|
 {Fore.CYAN}
 {Fore.CYAN} 
 {Fore.CYAN}  
 {Fore.RED}╔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╗
-{Fore.RED}                                                                 
-{Fore.RED}
-{Fore.RED}
+{Fore.RED}║                                                               
+{Fore.RED}║
+{Fore.RED}║
 {Fore.RED}╩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 TOOL #{Fore.RESET}"""
 

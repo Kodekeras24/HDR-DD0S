@@ -123,7 +123,7 @@ banner = f"""
 {Fore.RED}╩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━══╝
 {Fore.RESET}"""
 print(banner)
-{Fore.WHITE}TOOL INI MEMBUTUHKAN WAKTU 35 DETIK UTK MEMULAI SERANGAN 
+{Fore.WHITE}TOOL INI MEMBUTUHKAN WAKTU 35 DETIK UTK MEMULAI SERANGAN {Fore.RESET}")
 host = ""
 ip = ""
 target_loader = input(f"{Fore.LIGHTYELLOW_EX}IP/URL>")

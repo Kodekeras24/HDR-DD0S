@@ -120,8 +120,8 @@ banner = f"""
 {Fore.RED}║{Fore.GREEN}               WHO HAS A HIGH FIGHTING SPIRIT               ║
 {Fore.RED}║{Fore.YELLOW}                 FOR OUR BELOVED PALESTINE                 ║
 {Fore.RED}║{Fore.CYAN}                           ———oO0Oo——                        ║
-{Fore.RED}╩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━══╝
-{Fore.WHITE}TOOL INI MEMBUTUHKAN WAKTU 35 DETIK UTK MEMULAI SERANGAN{Fore.RESET}"""
+{Fore.RED}╩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━══╝{Fore.RESET}"""
+(f"{Fore.WHITE}TOOL INI MEMBUTUHKAN WAKTU 35 DETIK UTK MEMULAI SERANGAN{Fore.RESET}")
 print(banner)
 host = ""
 ip = ""

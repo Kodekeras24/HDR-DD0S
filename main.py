@@ -115,13 +115,12 @@ banner = f"""
 {Fore.WHITE}       |
 {Fore.WHITE}
 {Fore.RED}╔━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╗
-{Fore.RED}║{Fore.WHITE}             THIS SCRIPT IS DEDICATED TO THEM _   {Fore.RED}║                                                              
-{Fore.RED}║{Fore.YELLOW}              WHO HAS A HIGH FIGHTING SPIRIT     {Fore.RED}║
-{Fore.RED}║{Fore.GREEN}                  FOR OUR BELOVED PALESTINE       {Fore.RED}║
-{Fore.RED}║{Fore.MAGENTA}                        ———oO0Oo——              {Fore.RED}║
+{Fore.RED}║{Fore.WHITE}             THIS SCRIPT IS DEDICATED TO THEM _   {Fore.RED}║
+{Fore.RED}║{Fore.GREEN}               WHO HAS A HIGH FIGHTING SPIRIT     {Fore.RED}║
+{Fore.RED}║{Fore.YELLOW}                 FOR OUR BELOVED PALESTINE       {Fore.RED}║
+{Fore.RED}║{Fore.CYAN}                           ———oO0Oo——              {Fore.RED}║
 {Fore.RED}╩━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━══╝
 TOOL #{Fore.RESET}"""
-
 print(banner)
 host = ""
 ip = ""

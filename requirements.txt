@@ -1,8 +1,5 @@
-httpx
+requests
 asyncio
-validator
-socks
-pysocks
-cloudscraper
+datetime
+validators
 colorama
-undetected_chromedriver

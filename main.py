@@ -24,7 +24,7 @@ def ipv4():
     net4 = ipaddress.ip_network('0.0.0.0/0')
     for ips in net4:
 
-ipv4()
+    ipv4()
 # Random IP Spoofing
 def random_ip():
     return f"{random.randint(1, 255)}.{random.randint(1, 255)}.{random.randint(1, 255)}.{random.randint(1, 255)}"

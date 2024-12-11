@@ -15,8 +15,9 @@ logo = """
 |   ___   |  |  |  |  |  |  |  
 |  |   |  |  |__|  |  |__/  | 
 |__|   |__|\____|__|_______/
-
-
+"""
+faded_text = fade.fire(logo)
+print(faded_text)
 # Random IP Spoofing
 def random_ip():
     return f"{random.randint(1, 255)}.{random.randint(1, 255)}.{random.randint(1, 255)}.{random.randint(1, 255)}"

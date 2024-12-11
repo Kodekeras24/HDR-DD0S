@@ -48,7 +48,7 @@ def display_header():
     {Fore.CYAN}   /  ________  \|  \___/  /  ____\  |  |    |  |/  _______   \    ", 
     {Fore.CYAN}  /__/        \__\\______  \ /______/|__|    |__|__/        \__\   ",  
     {Fore.CYAN}                       \__\                                        ",
-    
+    ""
 # Tampilkan header dengan warna
     for line in header_lines:
         print(line)

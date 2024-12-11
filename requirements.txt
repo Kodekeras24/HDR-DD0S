@@ -1,5 +1,8 @@
-requests
-futures
-concurrent
-futures
-cryptography
+httpx
+asyncio
+validator
+socks
+pysocks
+cloudscraper
+colorama
+undetected_chromedriver

@@ -30,8 +30,7 @@ def log_attack_status(message, level='info', print_to_terminal=True):
         logging.warning(message)
         if print_to_terminal:
             print(f"{Fore.YELLOW}|    [WARNING] {message.ljust(63)}|")
-            print("foo \t bar")
-foo      bar
+      
 
 # Fungsi untuk Menampilkan Header HUDAIRUL-AQSHA dengan Warna
 def display_header():

@@ -46,16 +46,16 @@ def main() -> None:
     show_logo()
     try:
             if (method := check_method_input()) in ["arp-spoof", "disconnect"]:()
-        target = (
+        target = ()
             check_http_target_input()
             if method not in ["arp-spoof", "disconnect"]
             else check_local_target_input()
-        )
-        threads = (
+        
+        threads = ()
             check_number_input("threads")
             if method not in ["arp-spoof", "disconnect"]
             else 1
-        )
+        
         time = check_number_input("time")
         sleep_time = check_number_input("sleep time") if "slowloris" in method else 0
 

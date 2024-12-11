@@ -34,7 +34,7 @@ def log_attack_status(message, level='info', print_to_terminal=True):
 # Fungsi untuk Menampilkan Header HUDAIRUL-AQSHA dengan Warna
 def display_header():
     header_lines = [
-    f"{Style.BRIGT}
+    f"{Fore.RED}",
     f"{Fore.YELLOW} __    __ __    __ ______      ___     __ _______ __    __ __    ",        
     f"{Fore.YELLOW}|  |  |  |  |  |  |  ___  \   /    \  |  |  ___  \  |  |  |  |   ",     
     f"{Fore.YELLOW}|  |  |  |  |  |  |  |  \  | /  /\  \ |  |  |  |  | |  |  |  |   ",
@@ -75,7 +75,7 @@ def countdown(t):
             stdout.write(f"\r{Fore.YELLOW}|[*] {Fore.CYAN}HUDAIRUL AQSHA {Fore.RED} Attack'ts  {Fore.GREEN}{remaining_time:.2f}  {Fore.MAGENTA}Sec left {' ' * 26}|")
         else:
             stdout.flush()
-            stdout.write(f"\r{Fore.RED}|[+]  {Fore.YELLOW}חודאירול אקשה    f"{Fore.CYAN)התקפה נעשתה!{' ' * 53}|\n")
+            stdout.write(f"\r{Fore.RED}|[+]  {Fore.YELLOW}חודאירול אקשה    {Fore.CYAN}התקפה נעשתה!{' ' * 53}|\n")
             print(f"{Fore.CYAN}|{'=' * 74}|")
             return
 

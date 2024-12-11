@@ -30,10 +30,6 @@ logo = """
 """
 faded_text = fade.fire(logo)
 print(faded_text)
-
-
-
-
 try:
     from tools.addons.checks import (check_http_target_input,
                                      check_local_target_input,
@@ -49,8 +45,7 @@ def main() -> None:
     """Run main application."""
     show_logo()
     try:
-        if (method := check_method_input()) in ["arp-spoof", "disconnect"]:
-            show_local_host_ips()
+            if (method := check_method_input()) in ["arp-spoof", "disconnect"]:()
         target = (
             check_http_target_input()
             if method not in ["arp-spoof", "disconnect"]
@@ -81,7 +76,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main(
-
+    )
 with open("tools/L7/user_agents.json", "r") as agents:
     user_agents = json.load(agents)["agents"]
 

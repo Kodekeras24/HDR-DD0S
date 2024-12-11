@@ -58,7 +58,7 @@ f"{Fore.RED}
 
     # Versi dan URL
     print(f"{Fore.WHITE}{Style.BRIGHT}{' ' * 57}v.1.0")
-    print(f"{Fore.CYAN}{Style.BRIGHT}{' ' * 16}https://github.com/KUNF24/PASTBLACK-DD0S.git")
+    print(f"{Fore.CYAN}{Style.BRIGHT}{' ' * 16}https://github.com/Kodekeras24/HDR-DD0S.git")
     print(f"{Fore.CYAN}|{'=' * 74}|")
 
 # Fungsi untuk Meminta Input dari Pengguna dengan Tampilan Rapi
@@ -74,7 +74,7 @@ def countdown(t):
         remaining_time = (until - datetime.datetime.now()).total_seconds()
         if remaining_time > 0:
             stdout.flush()
-            stdout.write(f"\r{Fore.MAGENTA}|    [*] Attack status => {remaining_time:.2f} sec left {' ' * 26}|")
+            stdout.write(f"\r{Fore.MAGENTA}|    [*] HUDAIRUL AQSHA => {remaining_time:.2f} sec left {' ' * 26}|")
         else:
             stdout.flush()
             stdout.write(f"\r{Fore.MAGENTA}|    [*] Attack Done!{' ' * 53}|\n")

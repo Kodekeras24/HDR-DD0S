@@ -33,22 +33,22 @@ def log_attack_status(message, level='info', print_to_terminal=True):
 
 # Fungsi untuk Menampilkan Header HUDAIRUL-AQSHA dengan Warna
 def display_header():
-    header_lines = f" 
-    {Fore.YELLOW} __    __ __    __ ______      ___     __ _______ __    __ __    ",        
-    {Fore.YELLOW}|  |  |  |  |  |  |  ___  \   /    \  |  |  ___  \  |  |  |  |   ",     
-    {Fore.YELLOW}|  |  |  |  |  |  |  |  \  | /  /\  \ |  |  |  |  | |  |  |  |   ",
-    {Fore.YELLOW}|  |__|  |  |  |  |  |  |  |/  /__\  \|  |  |_/  /  |  |  |  |   ",
-    {Fore.GREEN}|  ————  |  \__|  |  |__/  |  ______  \  |   __  \  \__|  |  |____",     
-    {Fore.GREEN}|__|  |__|\____|__|_______/__/      \__\_|__|  \__\____|__|\______|",     
-    {Fore.RED}        ____       _______   ________ __      __      ____          ",   
-    {Fore.RED}       /    \     /  __   \ /  _____/|  |    |  |    /    \         ",    
-    {Fore.RED}      /  /\  \   |  /   \  |  |      |  |    |  |   /  /\  \        ",       
-    {Fore.RED}     /  /  \  \  |  |   |  |\  \___  |  |____|  |  /  /  \  \       ",
-    {Fore.CYAN}    /  /____\  \ |  |   |  | \____  \|   ____   | /  /____\  \     ",    
-    {Fore.CYAN}   /  ________  \|  \___/  /  ____\  |  |    |  |/  _______   \    ", 
-    {Fore.CYAN}  /__/        \__\\______  \ /______/|__|    |__|__/        \__\   ",  
-    {Fore.CYAN}                       \__\                                        ",
-    ""
+    header_lines = [
+    f"{Fore.YELLOW} __    __ __    __ ______      ___     __ _______ __    __ __    ",        
+    f"{Fore.YELLOW}|  |  |  |  |  |  |  ___  \   /    \  |  |  ___  \  |  |  |  |   ",     
+    f"{Fore.YELLOW}|  |  |  |  |  |  |  |  \  | /  /\  \ |  |  |  |  | |  |  |  |   ",
+    f"{Fore.YELLOW}|  |__|  |  |  |  |  |  |  |/  /__\  \|  |  |_/  /  |  |  |  |   ",
+    f"{Fore.GREEN}|  ————  |  \__|  |  |__/  |  ______  \  |   __  \  \__|  |  |____",     
+    f"{Fore.GREEN}|__|  |__|\____|__|_______/__/      \__\_|__|  \__\____|__|\______|",     
+    f"{Fore.RED}        ____       _______   ________ __      __      ____          ",   
+    f"{Fore.RED}       /    \     /  __   \ /  _____/|  |    |  |    /    \         ",    
+    f"{Fore.RED}      /  /\  \   |  /   \  |  |      |  |    |  |   /  /\  \        ",       
+    f"{Fore.RED}     /  /  \  \  |  |   |  |\  \___  |  |____|  |  /  /  \  \       ",
+    f"{Fore.CYAN}    /  /____\  \ |  |   |  | \____  \|   ____   | /  /____\  \     ",    
+    f"{Fore.CYAN}   /  ________  \|  \___/  /  ____\  |  |    |  |/  _______   \    ", 
+    f"{Fore.CYAN}  /__/        \__\\______  \ /______/|__|    |__|__/        \__\   ",  
+    f"{Fore.CYAN}                       \__\                                        ",
+    ]
 # Tampilkan header dengan warna
     for line in header_lines:
         print(line)

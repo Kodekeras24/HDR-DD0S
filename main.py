@@ -4,15 +4,12 @@ import string
 import random
 import threading
 from colorama import Fore, Back, Style
-
-class SockFlood:
-	def __init__(self):
-		os.system("cls")
-		os.system("title PyFlood - HD-DDOS Tool ")
-		self.host=None
-		self.portnum=None
-		self.threads=None
-
+from os import system, hdr
+def clear(): 
+    if name == 'nt': 
+        x = system('cls') 
+    else: 
+        x = system('clear') 
 	def graphics(self):
 		banner="""
 		 ██▓███    

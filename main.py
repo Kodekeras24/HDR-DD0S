@@ -1,9 +1,20 @@
+import os
 import socket
 import random
 import threading
 import struct
 import time
 import argparse
+import fade
+
+os.system("clear")
+logo = """
+ __     __ __    __ _______   ____
+|  |   |  |  |  |  |   __  \
+|  |___|  |  |  |  |  |  |  |
+|   ___   |  |  |  |  |  |  |  
+|  |   |  |  |__|  |  |__/  | 
+|__|   |__|\____|__|_______/
 
 
 # Random IP Spoofing

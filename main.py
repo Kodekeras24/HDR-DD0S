@@ -34,12 +34,12 @@ def log_attack_status(message, level='info', print_to_terminal=True):
 # Fungsi untuk Menampilkan Header HUDAIRUL-AQSHA dengan Warna
 def display_header():
     header_lines = [ 
-    f"{Fore.YELLOW} __    __ ",        
-    f"{Fore.YELLOW}|  |  |  |",     
-    f"{Fore.YELLOW}|  |  |  |",
-    f"{Fore.YELLOW}|  |__|  |",
-    f"{Fore.GREEN}|  ————  |",     
-    f"{Fore.GREEN}|__|  |__|",     
+    f"{Fore.YELLOW} __    __ __    __ ______      ___     __ _______ __    __ __       ",        
+    f"{Fore.YELLOW}|  |  |  |  |  |  |  ___  \   /    \  |  |  ___  \  |  |  |  |        ",     
+    f"{Fore.YELLOW}|  |  |  |  |  |  |  |  \  | /  /\  \ |  |  |  |  | |  |  |  |      ",
+    f"{Fore.YELLOW}|  |__|  |  |  |  |  |  |  |/  /__\  \|  |  |_/  /  |  |  |  |          ",
+    f"{Fore.GREEN}|  ————  |  \__|  |  |__/  |  ______  \  |   __  \  \__|  |  |____     ",     
+    f"{Fore.GREEN}|__|  |__|\____|__|_______/__/      \__\_|__|  \__\____|__|\______|         ",     
     f"{Fore.GREEN} ",    
     f"{Fore.RED}  ",   
     f"{Fore.RED} ",    
@@ -72,9 +72,9 @@ def countdown(t):
     until = datetime.datetime.now() + datetime.timedelta(seconds=int(t))
     while True:
         remaining_time = (until - datetime.datetime.now()).total_seconds()
-        if remaining_time > 1:
+        if remaining_time > 2:
             stdout.flush()
-            stdout.write(f"\r{Fore.YELLOW}| [*] {Fore.CYAN}HUDAIRUL AQSHA {Fore.RED} ATTACK STATUS  {Fore.GREEN}{remaining_time:.2f}  {Fore.MAGENTA}SEC LEFT {' ' * 26}|")
+            stdout.write(f"\r{Fore.YELLOW}|[*] {Fore.CYAN}HUDAIRUL AQSHA {Fore.RED} Attack'ts  {Fore.GREEN}{remaining_time:.2f}  {Fore.MAGENTA}Sec left {' ' * 26}|")
         else:
             stdout.flush()
             stdout.write(f"\r{Fore.MAGENTA}|    [*] Attack Done!{' ' * 53}|\n")

@@ -72,8 +72,8 @@ def countdown(t):
     while True:
         remaining_time = (until - datetime.datetime.now()).total_seconds()
         if remaining_time > 0:
-            stdout.flush()
             time.sleep = 1
+            stdout.flush()
             stdout.write(f"\r{Fore.BLUE}|[*] {Fore.YELLOW}HUDAIRUL AQSHA {Fore.WHITE} Attack'ts  {Fore.RED}{remaining_time:.2f}  {Fore.BLUE}Sec left {' ' * 26}|")
             stdout.write(f"\r{Fore.YELLOW}|[*] {Fore.CYAN}HUDAIRUL AQSHA {Fore.RED} Attack'ts  {Fore.GREEN}{remaining_time:.2f}  {Fore.MAGENTA}Sec left {' ' * 26}|")
             stdout.write(f"\r{Fore.RED}|[*] {Fore.YELLOW}חודאירול אקשה  {Fore.CYAN}התקפה נעשתה!{' ' * 53}|\n")

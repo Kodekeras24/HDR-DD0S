@@ -21,6 +21,7 @@ logging.basicConfig(
 # Fungsi untuk Logging Informasi Serangan
 def log_attack_status(message, level='info', print_to_terminal=True):
     if level == 'info':
+        my_regex = r"\Afoo"
         logging.info(message)
         if print_to_terminal:
             print(f"{Fore.CYAN}|    [INFO] {message.ljust(63)}|")

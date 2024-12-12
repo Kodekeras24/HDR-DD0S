@@ -1,4 +1,6 @@
-# -*- coding: utf-8 -*-                                                                                                                    import os
+# -*- coding: utf-8 -*-  
+#! /usr/bin/python3.11 -sP
+import os
 import requests
 import datetime
 import asyncio

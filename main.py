@@ -72,7 +72,7 @@ def get_user_input(prompt_message):
 def countdown(t):
     until = datetime.datetime.now() + datetime.timedelta(seconds=int(t))
     while True:
-        remaining_time = (until - datetime.datetime.now()).total_seconds(1)
+        remaining_time = (until - datetime.datetime.now()).total_seconds()
         if remaining_time > 1:
             stdout.flush()
             stdout.write(f"\r{Fore.BLUE}|[*] {Fore.YELLOW}HUDAIRUL AQSHA {Fore.WHITE} Attack'ts  {Fore.RED}{remaining_time:.2f}  {Fore.BLUE}Sec left {' ' * 26}|")
@@ -81,7 +81,7 @@ def countdown(t):
         else:
             stdout.flush()
             stdout.write(f"\r{Fore.RED}|[+]  {Fore.YELLOW}חודאירול אקשה    {Fore.CYAN}התקפה נעשתה!{' ' * 53}|\n")
-            print(f"{Fore.CYAN}|{'=' * 74}|")
+            print(f"{Fore.CYAN}|{'=' + 74}|")
             return
 
 # Validasi URL dan Parsing Target
